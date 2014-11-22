@@ -1,4 +1,2 @@
 src/**/*.js
 src/**/*.js.map
-
-!express.d.ts
