@@ -31,13 +31,16 @@ app.use(cookieParser());
 app.use(logger('dev'));
 // express-winston logger makes sense BEFORE the router.
 // Send log to mongodb
+expressWinston.requestWhitelist.push('ip');
+expressWinston.requestWhitelist.push('ips');
 app.use(expressWinston.logger({
     transports: [
         new winstonMongo({
             db: config.winston.mongo.dbName,
             collection: config.winston.mongo.accessLogCollName
         })
-    ]
+    ],
+    //msg: 'ip: {{req.ip}}, ips: {{req.ips}}'
 }));
 
 // Setup router

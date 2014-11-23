@@ -8,7 +8,7 @@ router
         var regId = req.params['regId'];
         console.log('New registeration!');
         console.log('Registeration id: %s', regId);
-
+        
         res.json({
             msg: 'Thanks for your registration!',
             regId: regId
