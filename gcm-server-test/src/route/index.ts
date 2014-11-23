@@ -8,8 +8,6 @@ router
             msg: 'Hello Android!'
         });
     })
-    .get('/err', (req, res, next) => {
-        return next(new Error("This is an error and it should be logged to the console"));
-    });
+    .use('/reg', require('./reg/index'));
 
 export = router;

@@ -28,3 +28,4 @@ registrationIds.push(registration_id);
 sender.send(message, registrationIds, 4, function (err, result) {
     console.log(result);
 });
+
