@@ -31,17 +31,13 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="log\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\typings\express-4.x\express.d.ts" />
-    <TypeScriptCompile Include="Scripts\typings\express-4.x\morgan.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\node\node.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\winston\winston.d.ts" />
     <TypeScriptCompile Include="src\app.ts" />
     <TypeScriptCompile Include="src\config.ts" />
-    <TypeScriptCompile Include="src\gcm\gcm-test.ts" />
     <TypeScriptCompile Include="src\gcm\send.ts" />
     <TypeScriptCompile Include="src\route\index.ts" />
     <TypeScriptCompile Include="src\route\reg\index.ts" />

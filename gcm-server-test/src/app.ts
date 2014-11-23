@@ -19,7 +19,6 @@ var winstonMongo = require('winston-mongodb').MongoDB;
 // my modules
 import config = require('./config');
 
-
 var app = express();
 
 app.use(bodyParser.json());
@@ -28,7 +27,7 @@ app.use(cookieParser());
 
 // Setup loggers
 // For console, use morgan logger
-app.use(logger('dev'));
+app.use(logger('combined'));
 // express-winston logger makes sense BEFORE the router.
 // Send log to mongodb
 expressWinston.requestWhitelist.push('ip');
@@ -39,8 +38,7 @@ app.use(expressWinston.logger({
             db: config.winston.mongo.dbName,
             collection: config.winston.mongo.accessLogCollName
         })
-    ],
-    //msg: 'ip: {{req.ip}}, ips: {{req.ips}}'
+    ]
 }));
 
 // Setup router
