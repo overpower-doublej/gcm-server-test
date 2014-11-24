@@ -24,6 +24,7 @@ var app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.enable('trust proxy');      // To get real ip
 
 // Setup loggers
 // For console, use morgan logger
