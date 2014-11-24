@@ -9,6 +9,9 @@ var config = {
             accessLogCollName: 'accessLog',
             errLogCollName: 'errLog'
         }
+    },
+    gcm: {
+        SERVER_ACCESS_KEY: 'AIzaSyD8d4J6MnN1htX2XxSjFl9BVWOb-txMPJc'
     }
 }
 

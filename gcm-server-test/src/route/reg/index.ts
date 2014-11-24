@@ -3,21 +3,26 @@ import send = require('../../gcm/send');
 
 var router = express.Router();
 router
-
-    .get('/:regId', function (req, res, next) {
-        var regId = req.params['regId'];
+    .post('/', (req, res, next) => {
+        var regId = req.body['regId'];
         console.log('New registeration!');
         console.log('Registeration id: %s', regId);
-        
+        // Response for HTTP POST
         res.json({
             msg: 'Thanks for your registration!',
-            regId: regId
+            date: new Date().toString()
         });
-
-        send(regId, (result) => {
+        // Setup message for GCM
+        var msg = {
+            msg: 'New Message!',
+            date: new Date().toString()
+        };
+        // Send GCM
+        send(regId, msg, (result) => {
             console.log('Google Cloud Message sended');
+            console.log(msg);
             console.log(result);
         });
-    })
+    });
 
 export = router;
