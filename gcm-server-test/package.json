@@ -13,7 +13,8 @@
         "winston": "~0.8.3",
         "winston-mongodb": "~0.5.3",
         "express-winston": "~0.2.8",
-        "grunt-ts": "~1.12.1"
+        "grunt-ts": "~1.12.1",
+        "grunt-execute": "~0.2.2"
     },
     "devDependencies": {
         "grunt": "~0.4.5",

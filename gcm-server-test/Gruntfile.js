@@ -5,13 +5,20 @@ module.exports = function (grunt) {
     //grunt.loadNpmTasks('grunt-contrib-jshint');
     //grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-ts');
+    grunt.loadNpmTasks('grunt-execute');
 
     // Default task.
     grunt.registerTask('default', ['ts']);
+    grunt.registerTask('exe', ['execute'])
 
     // Project configuration.
     grunt.initConfig({
         // Task configuration.
+        execute: {
+            server: {
+                src: ['src/app.js']
+            }
+        },
         ts: {
             build: {
                 // The source TypeScript files, http://gruntjs.com/configuring-tasks#files
