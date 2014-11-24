@@ -4,9 +4,11 @@ import send = require('../../gcm/send');
 var router = express.Router();
 router
     .post('/', (req, res, next) => {
+        // registration id
         var regId = req.body['regId'];
+
         console.log('New registeration!');
-        console.log('Registeration id: %s', regId);
+
         // Response for HTTP POST
         res.json({
             msg: 'Thanks for your registration!',

@@ -5,7 +5,7 @@ var config = configAll.gcm;
 function send(regId: string, res: Object, callback: (result) => void) {
     // Create a message
     var gcmMsg = new gcm.Message({
-        collapseKey: Math.round(Math.random() * 10),
+        collapseKey: Math.round(Math.random() * 10).toString(),     // Must be string
         //delayWhileIdle: true,
         //timeToLive: 3,
         data: res
