@@ -4,7 +4,12 @@ var config = configAll.gcm;
 
 function send(regId: string, res: Object, callback: (result) => void) {
     // Create a message
-    var gcmMsg = new gcm.Message(res);
+    var gcmMsg = new gcm.Message({
+        collapseKey: Math.round(Math.random() * 10),
+        //delayWhileIdle: true,
+        //timeToLive: 3,
+        data: res
+    });
     // Setup sender
     var sender = new gcm.Sender(config.SERVER_ACCESS_KEY);
     // Setup target device's registration id as array form
