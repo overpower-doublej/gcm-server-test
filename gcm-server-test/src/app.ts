@@ -1,4 +1,6 @@
 ﻿/// <reference path="../scripts/typings/express-4.x/express.d.ts" />
+/// <reference path="../scripts/typings/node/node.d.ts" />
+/// <reference path="../scripts/typings/winston/winston.d.ts" />
 
 // node modules
 import fs = require('fs');
