@@ -2,13 +2,13 @@
 import configAll = require('../config');
 var config = configAll.gcm;
 
-function send(regId: string, res: Object, callback: (result) => void) {
+function send(regId: string, msg: Object, callback: (result) => void) {
     // Create a message
     var gcmMsg = new gcm.Message({
         collapseKey: Math.round(Math.random() * 10).toString(),     // Must be string
         //delayWhileIdle: true,
         //timeToLive: 3,
-        data: res
+        data: msg
     });
     // Setup sender
     var sender = new gcm.Sender(config.SERVER_ACCESS_KEY);
